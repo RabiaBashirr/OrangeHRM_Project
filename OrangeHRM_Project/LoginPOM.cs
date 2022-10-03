@@ -30,17 +30,17 @@ namespace OrangeHRM_Project
             passwordInput(PwdInput);
             ClickSubmit();
         }
-        public void usernameInput(string userInput)
+        public void usernameInput(string UserInput)
         {
-            GM.LocateElement(username, userInput);
+            GM.SendInputData(username, UserInput);
         }
         public void passwordInput(string pwd)
         {
-            GM.LocateElement(password, pwd);
+            GM.SendInputData(password, pwd);
         }
         public void ClickSubmit()
         {
-            GM.Click(submit);
+            GM.Element_Click(submit);
         }
     }
 }

@@ -22,8 +22,6 @@ namespace OrangeHRM_Project
             driver = Driver;
         }
 
-
-
         #region Login_TC01
         // Tried to login without required fields
 
@@ -50,6 +48,24 @@ namespace OrangeHRM_Project
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.FindElement(By.Name("username")).SendKeys("Rabia");
             driver.FindElement(By.Name("password")).SendKeys("Rabia-01");
+            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+        }
+        #endregion
+
+
+
+
+        #region Login_TC03
+        //Tried to login with Invalid credentials
+        [TestMethod]
+        public void LoginwithInvalidCredentials()
+        {
+            //string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+            GeneralMethods.Navigation(url);
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.FindElement(By.Name("username")).SendKeys("Admin");
+            driver.FindElement(By.Name("password")).SendKeys("Rabia-01"); // wrong password
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
         }
         #endregion

@@ -47,6 +47,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.4.5.0\lib\net47\WebDriver.dll</HintPath>
@@ -57,10 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="DataDriven_Login.cs" />
     <Compile Include="GeneralMethods.cs" />
-    <Compile Include="Login.cs" />
+    <Compile Include="LoginTC.cs" />
     <Compile Include="LoginPOM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AdminSearchPOM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
