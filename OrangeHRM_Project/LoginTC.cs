@@ -38,7 +38,7 @@ namespace OrangeHRM_Project
 
 
         #region Login_TC02
-        //Tried to login with non-existing user
+        // Tried to login with non-existing user
         [TestMethod]
         public void LoginNonExistingUser()
         {
@@ -54,9 +54,8 @@ namespace OrangeHRM_Project
 
 
 
-
         #region Login_TC03
-        //Tried to login with Invalid credentials
+        // Tried to login with Invalid credentials
         [TestMethod]
         public void LoginwithInvalidCredentials()
         {
@@ -72,7 +71,7 @@ namespace OrangeHRM_Project
 
 
 
-        #region Login_TC03
+        #region Login_TC04
         // Login with Valid credentials
 
         public void ValidLogin()

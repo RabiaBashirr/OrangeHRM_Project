@@ -13,11 +13,12 @@ namespace OrangeHRM_Project
     {
         GeneralMethods GM = new GeneralMethods();
 
-        // Objects to locate element
+        // Objects to locate element        
         By username = By.Name("username");
         By password = By.Name("password");
         By submit = By.XPath("//button[@type='submit']");
-
+                
+        // If we want to maintain the state of base class browser then we need to use it.
         IWebDriver driver;
         public LoginPOM(IWebDriver Driver)
         {

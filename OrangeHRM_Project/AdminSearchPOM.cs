@@ -31,8 +31,24 @@ namespace OrangeHRM_Project
             GM.Element_Click(MenuItem1);
         }
 
-        public void SearchWithAdminOptions(string username, string empName)//, string status)
+        public void CheckResetFunctionality(string user)
         {
+            InputUsername(user);
+            // Performing Reset will clear all the entered  data into the filters
+            Reset_Search();
+        }
+
+        // Search with single field
+        public void SearchSingleField(string username)
+        {
+            InputUsername(username);
+            Search_click();
+        }
+
+        // Search with multiple fields in Admin role with status: Enabled
+        public void SearchEnabledAdminOptions(string username, string empName)//, string status)
+        {
+            GM.Window_Refresh();
             InputStatusAsEnabled();
             InputUsername(username);
             GM.ImplicitWaits(10);
@@ -43,7 +59,34 @@ namespace OrangeHRM_Project
             Search_click();
         }
 
-        public void SearchWitESSOptions(string username, string empName)//, string status)
+        // Search with multiple fields in Admin role with status: Disabled
+        public void SearchDisabledAdminOptions(string username, string empName)//, string status)
+        {
+            GM.Window_Refresh();
+            InputStatusAsDisabled();
+            InputUsername(username);
+            GM.ImplicitWaits(10);
+            InputUserRoleAsAdmin();
+            Thread.Sleep(1000);
+            InputEmpName(empName);
+            Thread.Sleep(1000);
+            Search_click();
+        }
+
+        public void SearchEnabledESSOptions(string username, string empName)//, string status)
+        {
+            GM.Window_Refresh();
+            InputStatusAsEnabled();
+            InputUsername(username);
+            Thread.Sleep(1000);
+            InputUserRoleAsESS();
+            Thread.Sleep(1000);
+            InputEmpName(empName);
+            Thread.Sleep(2000);
+            Search_click();
+        }
+
+        public void SearchDisabledESSOptions(string username, string empName)//, string status)
         {
             GM.Window_Refresh();
             InputStatusAsDisabled();
@@ -54,16 +97,7 @@ namespace OrangeHRM_Project
             InputEmpName(empName);
             Thread.Sleep(2000);            
             Search_click();
-        }
-
-        /* 
-        public void SearchSystemUser(string user) 
-        {
-            InputUsername(user);
-            SearchViaUsername(user);
-            // Performing Reset will clear all the entered  data into the filters
-            Reset_Search();
-        }*/
+        }        
 
         public void InputUsername(string user) { GM.SendInputData(Username, user); }
 
@@ -102,6 +136,8 @@ namespace OrangeHRM_Project
         {
             GM.SendInputData(EmpName, empName + Keys.Escape);// +Keys.Tab);        
         }
+
+        // Reset button Click to reset Username
         public void Reset_Search() { GM.Element_Click(ResetBtn); }
 
         public void InputStatusAsEnabled() 
@@ -120,6 +156,7 @@ namespace OrangeHRM_Project
             GM.MoveDowntheList(e);
             GM.SelectDropdownElement(e);
         }
+
         public void Search_click() { GM.Element_Click(SearchBtn); }        
     }
 }

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e5b6366b-3850-41ae-b01c-6b436a5586d2" name="Rabia Bashir@DESKTOP-KTU9MV7 2022-10-04 07:10:36" runUser="DESKTOP-KTU9MV7\Rabia Bashir" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2022-10-04T07:10:36.6194354-07:00" queuing="2022-10-04T07:10:36.6194354-07:00" start="2022-10-04T07:10:07.6666724-07:00" finish="2022-10-04T07:13:25.0876224-07:00" />
+  <TestSettings name="default" id="454cd4e6-c7bf-48c3-bb27-656d635c0d8d">
+    <Deployment runDeploymentRoot="Rabia_Bashir_DESKTOP-KTU9MV7_2022-10-04_07_10_36" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="ac188b21-1cfe-4f2e-b3f3-e8e516636588" testId="aba49309-4986-45f7-9297-43b510b21807" testName="LoginWithPOM" computerName="DESKTOP-KTU9MV7" duration="00:01:05.1312297" startTime="2022-10-04T07:10:36.6084730-07:00" endTime="2022-10-04T07:11:41.7410573-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac188b21-1cfe-4f2e-b3f3-e8e516636588">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method OrangeHRM_Project.Base.LoginWithPOM threw exception: &#xD;
+OpenQA.Selenium.WebDriverException: The HTTP request to the remote WebDriver server for URL http://localhost:49882/session/047cb48464fe6246edaeedab205ea16a/element timed out after 60 seconds. ---&gt; System.Threading.Tasks.TaskCanceledException: A task was canceled.</Message>
+          <StackTrace>    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.&lt;MakeHttpRequest&gt;d__35.MoveNext()&#xD;
+--- End of stack trace from previous location where exception was thrown ---&#xD;
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)&#xD;
+--- End of inner exception stack trace ---&#xD;
+    at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)&#xD;
+   at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)&#xD;
+   at OpenQA.Selenium.By.&lt;.ctor&gt;b__11_0(ISearchContext context)&#xD;
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(By by)&#xD;
+   at OrangeHRM_Project.GeneralMethods.LocateElement(By path) in D:\Contour Software Automation\Project\OrangeHRM_Project\OrangeHRM_Project\GeneralMethods.cs:line 49&#xD;
+   at OrangeHRM_Project.GeneralMethods.SendInputData(By path, String input) in D:\Contour Software Automation\Project\OrangeHRM_Project\OrangeHRM_Project\GeneralMethods.cs:line 55&#xD;
+   at OrangeHRM_Project.LoginPOM.usernameInput(String UserInput) in D:\Contour Software Automation\Project\OrangeHRM_Project\OrangeHRM_Project\LoginPOM.cs:line 35&#xD;
+   at OrangeHRM_Project.LoginPOM.login(String UserInput, String PwdInput) in D:\Contour Software Automation\Project\OrangeHRM_Project\OrangeHRM_Project\LoginPOM.cs:line 29&#xD;
+   at OrangeHRM_Project.Base.LoginWithPOM() in D:\Contour Software Automation\Project\OrangeHRM_Project\OrangeHRM_Project\Base.cs:line 76&#xD;
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="fdadd1e6-43a9-4319-b52a-de0acc4c820d" testId="3bc40707-c6a2-4bdf-9fd6-31e1ba39b826" testName="LoginWithEmptyFields (Data Row 0)" computerName="DESKTOP-KTU9MV7" duration="00:00:32.3508264" startTime="2022-10-04T07:12:41.7530656-07:00" endTime="2022-10-04T07:13:15.6415919-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fdadd1e6-43a9-4319-b52a-de0acc4c820d">
+      <Output>
+        <StdOut>Class Method Initilization! &#xD;
+Test Method Initialization! &#xD;
+Test Method Cleanup!</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2816b6ae-b688-4ba3-9624-bd9a210fd377" testId="fb1e6eec-5350-47b5-a01a-c1cb0c6f993a" testName="LoginWithInvalidCredentials (Data Row 0)" computerName="DESKTOP-KTU9MV7" duration="00:00:02.9311255" startTime="2022-10-04T07:13:18.6598748-07:00" endTime="2022-10-04T07:13:21.5946010-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2816b6ae-b688-4ba3-9624-bd9a210fd377">
+      <Output>
+        <StdOut>Test Method Initialization! &#xD;
+Test Method Cleanup!</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0c458ffd-62f4-41c2-8bda-1fe96eac49d4" testId="c6230b3a-5f6a-4805-a907-8674541d0d18" testName="LoginWithNonExistingUser (Data Row 0)" computerName="DESKTOP-KTU9MV7" duration="00:00:03.0134202" startTime="2022-10-04T07:13:15.6484560-07:00" endTime="2022-10-04T07:13:18.6598748-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c458ffd-62f4-41c2-8bda-1fe96eac49d4">
+      <Output>
+        <StdOut>Test Method Initialization! &#xD;
+Test Method Cleanup!</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e89feeef-405c-4854-b309-8ffebeaeffc1" testId="a89a26ec-f63f-445f-8419-299a28107e2f" testName="AdminMenu_Search" computerName="DESKTOP-KTU9MV7" duration="00:01:00.0098021" startTime="2022-10-04T07:11:41.7410573-07:00" endTime="2022-10-04T07:12:41.7530656-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e89feeef-405c-4854-b309-8ffebeaeffc1">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method OrangeHRM_Project.Base.AdminMenu_Search threw exception: &#xD;
+OpenQA.Selenium.WebDriverException: The HTTP request to the remote WebDriver server for URL http://localhost:49882/session/047cb48464fe6246edaeedab205ea16a/url timed out after 60 seconds. ---&gt; System.Threading.Tasks.TaskCanceledException: A task was canceled.</Message>
+          <StackTrace>    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.&lt;MakeHttpRequest&gt;d__35.MoveNext()&#xD;
+--- End of stack trace from previous location where exception was thrown ---&#xD;
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)&#xD;
+--- End of inner exception stack trace ---&#xD;
+    at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)&#xD;
+   at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.set_Url(String value)&#xD;
+   at OpenQA.Selenium.Navigator.GoToUrl(String url)&#xD;
+   at OrangeHRM_Project.GeneralMethods.Navigation(String url) in D:\Contour Software Automation\Project\OrangeHRM_Project\OrangeHRM_Project\GeneralMethods.cs:line 39&#xD;
+   at OrangeHRM_Project.Base.AdminMenu_Search() in D:\Contour Software Automation\Project\OrangeHRM_Project\OrangeHRM_Project\Base.cs:line 152&#xD;
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2f74a150-21cd-4c9d-b2b7-99c34b8e0cdf" testId="541fcf73-4bec-4698-b758-c48753485448" testName="LoginFunctionality" computerName="DESKTOP-KTU9MV7" duration="00:00:28.3259624" startTime="2022-10-04T07:10:08.1950343-07:00" endTime="2022-10-04T07:10:36.5811957-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f74a150-21cd-4c9d-b2b7-99c34b8e0cdf" />
+    <UnitTestResult executionId="ea2baed2-83a4-484c-a439-3450a333bffd" testId="fd49f9cb-fc64-45ac-8b12-f59a64434daf" testName="LoginWithValidCredentials (Data Row 0)" computerName="DESKTOP-KTU9MV7" duration="00:00:03.2170207" startTime="2022-10-04T07:13:21.5946010-07:00" endTime="2022-10-04T07:13:24.8200174-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea2baed2-83a4-484c-a439-3450a333bffd">
+      <Output>
+        <StdOut>Test Method Initialization! &#xD;
+Test Method Cleanup!</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LoginWithInvalidCredentials (Data Row 0)" storage="d:\contoursoftwareautomation\project\orangehrm_project\orangehrm_project\bin\debug\orangehrm_project.dll" id="fb1e6eec-5350-47b5-a01a-c1cb0c6f993a">
+      <Execution id="2816b6ae-b688-4ba3-9624-bd9a210fd377" />
+      <TestMethod codeBase="D:\ContourSoftwareAutomation\Project\OrangeHRM_Project\OrangeHRM_Project\bin\Debug\OrangeHRM_Project.dll" adapterTypeName="executor://mstestadapter/v2" className="OrangeHRM_Project.DataDriven_Login" name="LoginWithInvalidCredentials" />
+    </UnitTest>
+    <UnitTest name="LoginWithNonExistingUser (Data Row 0)" storage="d:\contoursoftwareautomation\project\orangehrm_project\orangehrm_project\bin\debug\orangehrm_project.dll" id="c6230b3a-5f6a-4805-a907-8674541d0d18">
+      <Execution id="0c458ffd-62f4-41c2-8bda-1fe96eac49d4" />
+      <TestMethod codeBase="D:\ContourSoftwareAutomation\Project\OrangeHRM_Project\OrangeHRM_Project\bin\Debug\OrangeHRM_Project.dll" adapterTypeName="executor://mstestadapter/v2" className="OrangeHRM_Project.DataDriven_Login" name="LoginWithNonExistingUser" />
+    </UnitTest>
+    <UnitTest name="LoginFunctionality" storage="d:\contoursoftwareautomation\project\orangehrm_project\orangehrm_project\bin\debug\orangehrm_project.dll" id="541fcf73-4bec-4698-b758-c48753485448">
+      <Execution id="2f74a150-21cd-4c9d-b2b7-99c34b8e0cdf" />
+      <TestMethod codeBase="D:\ContourSoftwareAutomation\Project\OrangeHRM_Project\OrangeHRM_Project\bin\Debug\OrangeHRM_Project.dll" adapterTypeName="executor://mstestadapter/v2" className="OrangeHRM_Project.Base" name="LoginFunctionality" />
+    </UnitTest>
+    <UnitTest name="AdminMenu_Search" storage="d:\contoursoftwareautomation\project\orangehrm_project\orangehrm_project\bin\debug\orangehrm_project.dll" id="a89a26ec-f63f-445f-8419-299a28107e2f">
+      <Execution id="e89feeef-405c-4854-b309-8ffebeaeffc1" />
+      <TestMethod codeBase="D:\ContourSoftwareAutomation\Project\OrangeHRM_Project\OrangeHRM_Project\bin\Debug\OrangeHRM_Project.dll" adapterTypeName="executor://mstestadapter/v2" className="OrangeHRM_Project.Base" name="AdminMenu_Search" />
+    </UnitTest>
+    <UnitTest name="LoginWithPOM" storage="d:\contoursoftwareautomation\project\orangehrm_project\orangehrm_project\bin\debug\orangehrm_project.dll" id="aba49309-4986-45f7-9297-43b510b21807">
+      <Execution id="ac188b21-1cfe-4f2e-b3f3-e8e516636588" />
+      <TestMethod codeBase="D:\ContourSoftwareAutomation\Project\OrangeHRM_Project\OrangeHRM_Project\bin\Debug\OrangeHRM_Project.dll" adapterTypeName="executor://mstestadapter/v2" className="OrangeHRM_Project.Base" name="LoginWithPOM" />
+    </UnitTest>
+    <UnitTest name="LoginWithEmptyFields (Data Row 0)" storage="d:\contoursoftwareautomation\project\orangehrm_project\orangehrm_project\bin\debug\orangehrm_project.dll" id="3bc40707-c6a2-4bdf-9fd6-31e1ba39b826">
+      <Execution id="fdadd1e6-43a9-4319-b52a-de0acc4c820d" />
+      <TestMethod codeBase="D:\ContourSoftwareAutomation\Project\OrangeHRM_Project\OrangeHRM_Project\bin\Debug\OrangeHRM_Project.dll" adapterTypeName="executor://mstestadapter/v2" className="OrangeHRM_Project.DataDriven_Login" name="LoginWithEmptyFields" />
+    </UnitTest>
+    <UnitTest name="LoginWithValidCredentials (Data Row 0)" storage="d:\contoursoftwareautomation\project\orangehrm_project\orangehrm_project\bin\debug\orangehrm_project.dll" id="fd49f9cb-fc64-45ac-8b12-f59a64434daf">
+      <Execution id="ea2baed2-83a4-484c-a439-3450a333bffd" />
+      <TestMethod codeBase="D:\ContourSoftwareAutomation\Project\OrangeHRM_Project\OrangeHRM_Project\bin\Debug\OrangeHRM_Project.dll" adapterTypeName="executor://mstestadapter/v2" className="OrangeHRM_Project.DataDriven_Login" name="LoginWithValidCredentials" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="aba49309-4986-45f7-9297-43b510b21807" executionId="ac188b21-1cfe-4f2e-b3f3-e8e516636588" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3bc40707-c6a2-4bdf-9fd6-31e1ba39b826" executionId="fdadd1e6-43a9-4319-b52a-de0acc4c820d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb1e6eec-5350-47b5-a01a-c1cb0c6f993a" executionId="2816b6ae-b688-4ba3-9624-bd9a210fd377" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c6230b3a-5f6a-4805-a907-8674541d0d18" executionId="0c458ffd-62f4-41c2-8bda-1fe96eac49d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a89a26ec-f63f-445f-8419-299a28107e2f" executionId="e89feeef-405c-4854-b309-8ffebeaeffc1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="541fcf73-4bec-4698-b758-c48753485448" executionId="2f74a150-21cd-4c9d-b2b7-99c34b8e0cdf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fd49f9cb-fc64-45ac-8b12-f59a64434daf" executionId="ea2baed2-83a4-484c-a439-3450a333bffd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="5" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

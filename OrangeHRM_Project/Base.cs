@@ -16,23 +16,44 @@ namespace OrangeHRM_Project
     [TestClass]
     public class Base
     {
-        GeneralMethods GM = new GeneralMethods();
-        LoginPOM Lp = new LoginPOM(driver);
-        AdminSearchPOM ASP = new AdminSearchPOM();
+        public static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         static IWebDriver driver = GeneralMethods.SeleniumBrowserInit("Chrome");
         string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
+        GeneralMethods GM = new GeneralMethods();
+        LoginMethods LM = new LoginMethods(driver);
+        LoginPOM Lp = new LoginPOM(driver);
+        AdminSearchPOM ASP = new AdminSearchPOM();
 
-        // Login via DOM - Login Class
+        [TestMethod]
+        public void FullAutomatedWesbite()
+        {
+            GeneralMethods.Navigation(url);
+            LoginWithPOM();
+            AdminMenu_Search();
+
+
+        }
+
+
+        /* ***************************
+         * Login via DOM - Login Class 
+         *************************** */
+
         [TestMethod]
         public void LoginFunctionality()
         {
-            LoginMethods log1 = new LoginMethods(driver);
+            //IWebDriver driver = GeneralMethods.SeleniumBrowserInit("Chrome");
+
+            log.Info("Calling Login function via Dom:");
+
 
             // TestCase-01
-            log1.VerifywithEmptyFields();
+            log.Info("Verify if it allows to login with empty fields?");
+            LM.VerifywithEmptyFields();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
+            log.Info("");
 
             /*
             * //Explicit Wait to show results
@@ -42,31 +63,35 @@ namespace OrangeHRM_Project
             */
 
             // TestCase-02
-            log1.LoginNonExistingUser();
+            LM.LoginNonExistingUser();
             // Implicit Wait to show results
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
 
             // TestCase-03
-            log1.LoginwithInvalidCredentials();
+            LM.LoginwithInvalidCredentials();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
 
             // TestCase-04
-            log1.ValidLogin();
+            LM.ValidLogin();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
 
+            //AdminMenu_Search();
             //GM.CloseBrowser();
         }
 
 
 
-        // Login Via POM - LoginPOM class
+        /* *******************************
+         * Login Via POM - LoginPOM class
+         ****************************** */
+
         [TestMethod]
         public void LoginWithPOM()
         {
-            GeneralMethods.Navigation(url);
-            Thread.Sleep(1000);
+            // GeneralMethods.Navigation(url);
+
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
-         
+
             // TestCase-01: Login without any data
             Lp.login("", "");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
@@ -83,14 +108,17 @@ namespace OrangeHRM_Project
             Lp.login("Admin", "admin123");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
-            Thread.Sleep(5000);
-            GM.CloseBrowser();
+            //  Thread.Sleep(5000);
+            //   GM.CloseBrowser();
         }
 
 
+        /* ****************************
+         * Login with Data-Driven POM
+         * -- We can't call datasource methods
+         *************************** * /
 
-        // Login with Data-Driven POM
-        /*   [TestMethod]
+        [TestMethod]
            public void DDT_Login()
            {
                //GeneralMethods.Navigation(url);
@@ -103,7 +131,7 @@ namespace OrangeHRM_Project
            }
 
         #region Data Driven POM
-           /* ****************** Data driven POM ********************* / 
+           /* ****************** Data driven POM ********************* * / 
 
            // Calling from Execution Class - DataDriven_Login & LoginPOM class
 
@@ -143,19 +171,35 @@ namespace OrangeHRM_Project
         [TestMethod]
         public void AdminMenu_Search()
         {
-            // Signin - Main Page URL
+            /*/ Signin - Main Page URL
             GeneralMethods.Navigation(url);
             GM.ImplicitWaits(10);
 
             // Login the site
-            Lp.login("Admin", "admin123");
-
+            Lp.login("Admin", "admin123"); 
+            */
             // Navigate to Admin - Menu item
             ASP.NavigatetoAdmin();
 
-            // Calling Search functions
-            ASP.SearchWithAdminOptions("Rabi", "Rabia");
-            ASP.SearchWitESSOptions("Ra", "Rabi");
+            /* ***** Performing Test Case on Search Section ***** */
+
+            // Test Case - 01: Check reset button 
+            ASP.CheckResetFunctionality("dummy User");
+
+            // Test Case - 02: Search with one field
+            ASP.SearchSingleField("Hassam");
+
+            // Test Case - 03: Search user as an Admin role with status: Enabled
+            ASP.SearchEnabledAdminOptions("Rabi", "Rabia");
+
+            // Test Case - 04: Search user as an Admin role with status: Disabled
+            ASP.SearchDisabledAdminOptions("Rabi", "Rabia");
+
+            // Test Case - 05: Search user as an ESS role with status: Enabled
+            ASP.SearchEnabledESSOptions("Ra", "Rabi");
+
+            // Test Case - 06: Search user as an ESS role with status: Disabled
+            ASP.SearchDisabledESSOptions("Ra", "Rabi");
         }
     }
 }
