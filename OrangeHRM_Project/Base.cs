@@ -48,12 +48,11 @@ namespace OrangeHRM_Project
 
             log.Info("Calling Login function via Dom:");
 
-
             // TestCase-01
             log.Info("Verify if it allows to login with empty fields?");
             LM.VerifywithEmptyFields();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
-            log.Info("");
+            log.Info("It throws message of required field");
 
             /*
             * //Explicit Wait to show results
@@ -63,22 +62,27 @@ namespace OrangeHRM_Project
             */
 
             // TestCase-02
+            log.Info("Verify if it allows to login with non-existing user?");
             LM.LoginNonExistingUser();
             // Implicit Wait to show results
+            log.Info("It throws a message of Invalid credentials.");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
 
             // TestCase-03
+            log.Info("Verify if it allows to login with invalid credntials");
             LM.LoginwithInvalidCredentials();
+            log.Info("It throws a message of Invalid credentials.");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
 
             // TestCase-04
+            log.Info("Verify if it allows to login with valid credentials?");
             LM.ValidLogin();
+            log.Info("Login is successful and redirected to PIM");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
 
             //AdminMenu_Search();
             //GM.CloseBrowser();
         }
-
 
 
         /* *******************************
@@ -90,22 +94,31 @@ namespace OrangeHRM_Project
         {
             // GeneralMethods.Navigation(url);
 
+            log.Info("Calling Login function via POM:");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             // TestCase-01: Login without any data
+            log.Info("Verify if it allows to login with empty fields?");
             Lp.login("", "");
+            log.Info("It throws message of required field");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             // TestCase-02: Login with non-existing credentials
+            log.Info("Verify if it allows to login with non-existing user?");
             Lp.login("Rabia", "Rabia-01");
+            log.Info("It throws a message of Invalid credentials.");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             // TestCase-03: Login with Invalid credentials
+            log.Info("Verify if it allows to login with invalid credntials");
             Lp.login("Admin", "rabia123");
+            log.Info("It throws a message of Invalid credentials.");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             // TestCase-04: Login with valid credentials
+            log.Info("Verify if it allows to login with valid credentials?");
             Lp.login("Admin", "admin123");
+            log.Info("Login is successful and redirected to PIM");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             //  Thread.Sleep(5000);
@@ -171,34 +184,44 @@ namespace OrangeHRM_Project
         [TestMethod]
         public void AdminMenu_Search()
         {
-            /*/ Signin - Main Page URL
-            GeneralMethods.Navigation(url);
+            // Signin - Main Page URL
+            //GeneralMethods.Navigation(url);
             GM.ImplicitWaits(10);
 
             // Login the site
-            Lp.login("Admin", "admin123"); 
-            */
+            //Lp.login("Admin", "admin123"); 
+
             // Navigate to Admin - Menu item
+            log.Info("\nNavigation to Admin Module!");
             ASP.NavigatetoAdmin();
 
             /* ***** Performing Test Case on Search Section ***** */
 
-            // Test Case - 01: Check reset button 
+            // Test Case - 01: Check reset functionality 
+            log.Info("Checking the reset functionality");
             ASP.CheckResetFunctionality("dummy User");
 
             // Test Case - 02: Search with one field
+            log.Info("Search with one field:");
             ASP.SearchSingleField("Hassam");
 
             // Test Case - 03: Search user as an Admin role with status: Enabled
+            log.Info("Search user as an Admin role with status: Enabled");
             ASP.SearchEnabledAdminOptions("Rabi", "Rabia");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             // Test Case - 04: Search user as an Admin role with status: Disabled
+            log.Info("Search user as an Admin role with status: Disabled");
             ASP.SearchDisabledAdminOptions("Rabi", "Rabia");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             // Test Case - 05: Search user as an ESS role with status: Enabled
+            log.Info("Search user as an ESS role with status: Enabled");
             ASP.SearchEnabledESSOptions("Ra", "Rabi");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
             // Test Case - 06: Search user as an ESS role with status: Disabled
+            log.Info("Search user as an ESS role with status: Disabled");
             ASP.SearchDisabledESSOptions("Ra", "Rabi");
         }
     }
